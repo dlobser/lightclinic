@@ -62,6 +62,19 @@
       width: 100%;
       height: 100%;
     }
+     .responsive-iframe {
+        width: 100%;
+        height: 0;
+        padding-bottom: calc(100% * 721 / 640); /* Calculate height based on aspect ratio */
+        position: relative;
+    }
+    .responsive-iframe iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
   </style>
 </head>
 
@@ -104,7 +117,12 @@
         Find us in The Altered States Lab within Deep Space from Wed to Friday, 10am-7pm.
       </p>
     </section>
-
+    <br>
+    
+    <div class="responsive-iframe">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScplYagN6lEVs3x_7quJESlxzCoDwB6TC9Iqfrs6gfsfwcLyw/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0" allowfullscreen>Loading...</iframe>
+    </div>
+    <br>
     <section id="team" class="mt-5">
       <h2>Team</h2>
       <ul>
