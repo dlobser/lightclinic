@@ -1,223 +1,666 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LIGHT CLINIC</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Light Clinic offers creative digital development services specializing in interactive digital media for healthcare and wellness domains.">
+  <meta name="author" content="Light Clinic">
+  <title>Light Clinic - Digital Media for Healthcare & Wellness</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  
   <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
+    :root {
+      --primary: #6c63ff;
+      --secondary: #f5f5f5;
+      --dark: #333;
+      --light: #fff;
+      --gray: #888;
+      --gradient: linear-gradient(135deg, #6c63ff 0%, #7c4dff 100%);
     }
-    .gradient-background {
-      position: fixed;
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background-color: var(--light);
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+    }
+    
+    /* Header */
+    .hero-section {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background-color: #f9f9ff;
+      padding: 3rem 0;
+    }
+    
+    .hero-bg {
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-      height: 100vh;
-      background: linear-gradient(to bottom, #ffffff, #9bd1e8);
+      height: 100%;
       z-index: -1;
+      opacity: 0.5;
     }
-
-    h1 {
-      font-size: 36px;
-      color: #333;
-      margin-bottom: 30px;
+    
+    .hero-bg .shape {
+      position: absolute;
+      background: var(--gradient);
+      border-radius: 50%;
     }
-
-    h2 {
-      font-size: 24px;
-      color: #333;
-      margin-bottom: 20px;
+    
+    .hero-bg .shape:nth-child(1) {
+      width: 500px;
+      height: 500px;
+      top: -250px;
+      right: -150px;
+      opacity: 0.4;
     }
-
-    p {
-      font-size: 16px;
-      color: #666;
-      margin-bottom: 20px;
+    
+    .hero-bg .shape:nth-child(2) {
+      width: 300px;
+      height: 300px;
+      bottom: -150px;
+      left: -100px;
+      opacity: 0.3;
     }
-
-    ul {
-      margin-bottom: 20px;
-      padding-left: 0;
-      list-style-type: none;
+    
+    .hero-content {
+      z-index: 1;
     }
-
-    ul li {
-      margin-bottom: 10px;
+    
+    .brand-name {
+      font-size: clamp(3rem, 10vw, 6rem);
+      font-weight: 700;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -2px;
+      margin-bottom: 2rem;
     }
+    
+    .tagline {
+      font-size: clamp(1rem, 2vw, 1.5rem);
+      color: var(--gray);
+      max-width: 600px;
+      margin: 0 auto 3rem;
+    }
+    
+    /* Social Icons */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .social-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: var(--light);
+      border-radius: 50%;
+      color: var(--primary);
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .social-icon:hover {
+      transform: translateY(-5px);
+      background: var(--gradient);
+      color: var(--light);
+    }
+    
+    /* Section Titles */
+    .section-title {
+      position: relative;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      font-weight: 600;
+      text-align: center;
+    }
+    
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--gradient);
+      margin: 1rem auto 0;
+      border-radius: 2px;
+    }
+    
+    /* Experiences Section */
+    .experiences-section {
+      padding: 3rem 0;
+      background-color: var(--secondary);
+    }
+    
+    .experience-card {
+      height: 100%;
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      background: var(--light);
+      border: none;
+    }
+    
+    .experience-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+    
+    .card-title {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      text-align: center;
+      padding: 1.5rem 0 1rem;
+    }
+    
+    .card-img-top {
+      height: 250px;
+      object-fit: cover;
+      transition: all 0.8s ease;
+    }
+    
+    .experience-card:hover .card-img-top {
+      transform: scale(1.05);
+    }
+    
+    .card-body {
+      padding: 1.5rem;
+    }
+    
+    .card-text {
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+      min-height: 100px;
+    }
+    
+    /* Buttons */
+    .btn-primary {
+      background: var(--gradient);
+      border: none;
+      padding: 0.5rem 1.5rem;
+      border-radius: 30px;
+      color: var(--light);
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(108, 99, 255, 0.4);
+    }
+    
+    .btn-outline {
+      border: 2px solid var(--primary);
+      background: transparent;
+      color: var(--primary);
+      font-weight: 500;
+      border-radius: 30px;
+      padding: 0.5rem 2rem;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-outline:hover {
+      background: var(--gradient);
+      color: var(--light);
+      border-color: transparent;
+    }
+    
+    /* Video Container */
     .video-container {
       position: relative;
-      width: 100%;
-      padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 = 0.5625 or 56.25%) */
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+      margin-top: 1.5rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
-
+    
     .video-container iframe {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+      border: 0;
     }
-     .responsive-iframe {
-        width: 100%;
-        height: 0;
-        padding-bottom: calc(100% * 721 / 640); /* Calculate height based on aspect ratio */
-        position: relative;
+    
+    /* Partners Section */
+    .partners-section {
+      padding: 5rem 0;
+      background-color: var(--light);
     }
-    .responsive-iframe iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+    
+    .partner-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 120px;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: all 0.3s ease;
+    }
+    
+    .partner-logo:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+    
+    .partner-logo img {
+      max-width: 100%;
+      max-height: 80px;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: var(--light);
+      padding: 3rem 0;
+    }
+    
+    .footer-logo {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .footer-link {
+      color: var(--gray);
+      transition: all 0.3s ease;
+    }
+    
+    .footer-link:hover {
+      color: var(--primary);
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+      .card-text {
+        min-height: auto;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero-section {
+        min-height: 60vh;
+        text-align: center;
+      }
+      
+      .experience-card {
+        margin-bottom: 2rem;
+      }
+      
+      .social-icons {
+        justify-content: center;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .brand-name {
+        font-size: 3.5rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .partner-logo {
+        height: 100px;
+      }
     }
   </style>
 </head>
 
 <body>
-   <div class="gradient-background"></div>
-
-  <div class="container text-center mt-5">
-    <a href="https://light.clinic/img/visitations.jpg" target="_blank">
-      <img src="https://light.clinic/img/visitations.jpg" alt="Logo" class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;">
-    </a>
-    <h1 class="mt-3">LIGHT CLINIC</h1>
-    <div class="mt-4">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfJsRizgmacxywAcl5RoXLYTy_j7IyJdU-4aNk36AAY_aXHGA/viewform?usp=sf_link" class="btn btn-primary btn-block mb-2" target="_blank"
-        style="background-color: #3d7d99;">Sign Up for VR</a>
-      <a href="https://light.clinic/" class="btn btn-primary btn-block mb-2" target="_blank"
-        style="background-color: #3d7d99;">Website</a>
-      <a href="https://forms.gle/MXtZZUojJT7gVUjy8" class="btn btn-primary btn-block mb-2" target="_blank"
-        style="background-color: #3d7d99;">Subscribe to Our List</a>
-      <a href="https://www.instagram.com/" class="btn btn-primary btn-block mb-2" target="_blank"
-        style="background-color: #3d7d99;">Instagram</a>
-      <a href="https://ai-control.glitch.me" class="btn btn-primary btn-block"
-        style="background-color: #3d7d99;">AI Zoom Control</a>
-      <a href="https://www.calendly.com/davidlobser" class="btn btn-primary btn-block mb-2" target="_blank"
-        style="background-color: #3d7d99;">Schedule a Zoom Call</a>
-      <a href="mailto:info@light.clinic" class="btn btn-primary btn-block"
-        style="background-color: #3d7d99;">Email info@light.clinic</a>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-bg">
+      <div class="shape"></div>
+      <div class="shape"></div>
     </div>
-  </div>
-
-  <div class="container mt-5">
-    <section id="services">
-      <h2>Services</h2>
-      <p>
-        Light Clinic offers a range of creative digital development services specializing in interactive digital media for
-        the healthcare and wellness domains. We provide flexibility in white labeling, licensing, or customizing our
-        existing technology to cater to a variety of needs. Our team excels in app development, visualization,
-        animation, and creative development.
-      </p>
-    </section>
-    
-    <section id="services">
-      <h2>PS23</h2>
-      <p>
-        Find us in The Altered States Lab within Deep Space from Wed to Friday, 10am-7pm.
-      </p>
-    </section>
-    <br>
-    <section id="team" class="mt-5">
-      <h2>Team</h2>
-      <ul>
-        <li>David Lobser - Founder and Creative Director</li>
-        <li>Scott Garner - Creative Tech Engineer</li>
-        <li>Matthew Foglia - Business Development, Environment Artist</li>
-        <li>Aysu Unal - Facilitator, Environment Artist</li>
-        <li>Kishore Doddi - Location-based Event Manager</li>
-        <li>Elke Dehner - Location-based Event Manager</li>
-        <li>Dr. Bill Brennan - Psychiatric/Therapy Consultant</li>
-        <li>Dr. Andrea Wismann - Medical Advisor</li>
-        <li>Dr. Tim Candy - Medical Advisor</li>
-        <li>Angela Adams - Neuroscience Consultant</li>
-        <li>Dr. Melissa Selinger - Neuroscience Consultant</li>
-      </ul>
-    </section>
-
-    <section id="collaborations" class="mt-5">
-      <h2>Collaborations</h2>
-      <ul>
-        <li>East Forest - Musician focused on psychedelic journeys</li>
-        <li>Dr. Deirdre Barrett - Dream researcher</li>
-      </ul>
-    </section>
-
-    <section id="locations" class="mt-5">
-      <h2>Locations with Visitations in Use</h2>
-      <ul>
-        <li>HMS - Healthy Mind Solutions, Australia</li>
-        <li>InfuseKet - Arizona</li>
-        <li>Manhattan Restorative Health Sciences - Manhattan</li>
-        <li>Delight Factory - Brooklyn</li>
-      </ul>
-    </section>
-
-    <section id="capabilities" class="mt-5">
-      <h2>Capabilities</h2>
-      <ul>
-        <li>Extended Reality (XR) includes Virtual Reality (VR) and Augmented Reality (AR)</li>
-        <li>Multi-user experiences</li>
-        <li>Web portals</li>
-        <li>App prototypes</li>
-        <li>Animation and design</li>
-        <li>Procedural graphics</li>
-        <li>Custom high-performance shaders and particles</li>
-        <li>User experience design (UX)</li>
-      </ul>
-    </section>
-
-    <section id="clients" class="mt-5">
-      <h2>Clients</h2>
-      <ul>
-        <li>ATAI Life Sciences: Drug development</li>
-        <li>Gilgamesh Pharma: Drug development</li>
-        <li>Psyber: A company specializing in psychiatric applications in cyberspace</li>
-        <li>QWLT: A new healthcare platform to connect insurers with developers and gamers</li>
-        <li>Under NDA: A stealth healthcare startup for which we developed interactive, procedural graphics</li>
-        <li>Rocket VR: VR for oncology</li>
-        <li>Our Metaverse: A metaverse education startup</li>
-        <li>HTC: Headset manufacturer</li>
-      </ul>
-    </section>
-
-    <section id="projects" class="mt-5">
-      <h2>In Development</h2>
-      <ul>
-        <li>A biofeedback-driven breath training app in VR</li>
-        <li>An AI-driven UGC system</li>
-        <li>Clinician controls to synchronize users in immersive light and sound journeys</li>
-        <li>Blending immersive aesthetics with therapy</li>
-      </ul>
-    </section>
-    
-    <br>
-    <h2>Videos</h2>
-    <p>
-      The following are a collection of recent work in progress videos that don't fit in nicely elsewhere but should give some sense of the kind of work we have been experimenting with lately.
-    </p>
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/videoseries?list=PLqk5OFb-cUGZWHVgmdKQDkhasX03J4kgf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </div>  
-  
-  </div>
-  <footer style="background-color: #3d7d99; color: #fff; padding: 20px;">
     <div class="container">
-        <div class="row">
-            <div class="col text-center">
-                <p>info@light.clinic</p>
-            </div>
+      <div class="row align-items-center">
+        <div class="col-lg-12 text-center hero-content">
+          <h1 class="brand-name">light.clinic</h1>
+          <p class="tagline">Creative digital development services specializing in interactive digital media for healthcare and wellness domains.</p>
+
+          
+          <div class="social-icons">
+            <a href="https://www.facebook.com/lightclinicvr" class="social-icon">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/the_lightclinic" class="social-icon">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/the_lightclinic/" class="social-icon">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/channel/UCbg5nbEayyUl2gHWrB2xbTg" class="social-icon">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://the-lightclinic.medium.com/we-are-light-clinic-1f4b400af0ed" class="social-icon">
+              <i class="fab fa-medium-m"></i>
+            </a>
+            <a href="mailto:info@light.clinic" class="social-icon">
+              <i class="far fa-envelope"></i>
+            </a>
+          </div>
         </div>
+      </div>
     </div>
-</footer>
+  </section>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Experiences Section -->
+  <section id="experiences" class="experiences-section">
+    <div class="container">
+      <h2 class="section-title">Our Experiences</h2>
+      
+      <div class="row g-4">
+
+         <!-- Brain Candy -->
+         <div class="col-lg-6 col-md-6 mb-4">
+          <div class="experience-card h-100">
+            <h3 class="card-title">Brain Candy</h3>
+            <img src="https://braincandyapp.com/src/images/screenshots/BCCapture22560x1440.png" class="card-img-top" alt="Brain Candy VR Experience">
+            <div class="card-body">
+              <p class="card-text">A VR experience that uses flickering lights and visual patterns to guide your brain into various states of consciousness. Based on research into neural rhythms and sensory processing to promote relaxation, focus, and creativity.</p>
+              
+              <a href="https://braincandyapp.com" class="btn btn-outline mb-3 w-100">Visit Website</a>
+              
+              <div class="download-links mt-4">
+                <h5 class="text-center mb-3">Download</h5>
+                <div class="d-grid">
+                  <a href="https://www.meta.com/en-gb/experiences/brain-candy/8052379494880098/" class="btn btn-primary mb-3">Meta Quest Store</a>
+                </div>
+              </div>
+              
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/jjqDQZ5Uha0" title="Brain Candy Trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dreaming -->
+        <div class="col-lg-6 col-md-6 mb-4">
+          <div class="experience-card h-100">
+            <h3 class="card-title">Dreaming</h3>
+            <img src="./img/dreaming.png" class="card-img-top" alt="Dreaming VR Experience">
+            <div class="card-body">
+              <p class="card-text">Explore the power of your dreaming mind as esteemed dream researcher, Dr. Deirdre Barrett, teaches you how to use your dreaming mind to sleep peacefully, solve problems, and explore your creativity.</p>
+              
+              <a href="https://dlobser.com/dreaming" class="btn btn-outline mb-3 w-100">Visit Website</a>
+              
+              <div class="download-links mt-4">
+                <h5 class="text-center mb-3">Download</h5>
+                <div class="d-grid">
+                  <a href="https://www.viveport.com/b255ddaa-1d29-4f6c-9103-8b1cc823cb12" class="btn btn-primary mb-3">Viveport</a>
+                </div>
+              </div>
+              
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/NBVtHTUii_4" title="Dreaming" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Cosmic Sugar -->
+        <div class="col-lg-6 col-md-6 mb-4">
+          <div class="experience-card h-100">
+            <h3 class="card-title">Cosmic Sugar</h3>
+            <img src="./img/cosmic.jpg" class="card-img-top" alt="Cosmic Sugar VR Experience">
+            <div class="card-body">
+              <p class="card-text">A creative VR experience. Available on Steam and the Oculus store. Find a state of flow and use forces to interact with a universe of stars.</p>
+              
+              <a href="http://cosmicsugarvr.com" class="btn btn-outline mb-3 w-100">Visit Website</a>
+              
+              <div class="download-links mt-4">
+                <h5 class="text-center mb-3">Download</h5>
+                <div class="d-flex gap-2">
+                  <a href="https://store.steampowered.com/app/559010/Cosmic_Sugar_VR/" class="btn btn-primary flex-grow-1">Steam</a>
+                  <a href="https://www.oculus.com/experiences/rift/2142620429171530/" class="btn btn-primary flex-grow-1">Oculus</a>
+                </div>
+              </div>
+              
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/videoseries?list=PLBonCgfCdkHQkisNYIdh6-7Okkr7y6rQR" title="Cosmic Sugar Playlist" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Visitations -->
+        <div class="col-lg-6 col-md-6 mb-4">
+          <div class="experience-card h-100">
+            <h3 class="card-title">Visitations</h3>
+            <img src="./img/visitations.jpg" class="card-img-top" alt="Visitations VR Experience">
+            <div class="card-body">
+              <p class="card-text">An immersive VR experience made of a series of short vignettes designed to produce relaxed and entranced states in the user. It draws on lessons from neuroscience and psychology to craft engaging experiences which are aesthetic and therapeutic.</p>
+              
+              <a href="http://visitationsvr.com" class="btn btn-outline mb-3 w-100">Visit Website</a>
+              
+              <div class="download-links mt-4">
+                <h5 class="text-center mb-3">Download</h5>
+                <div class="d-flex gap-2 flex-wrap">
+                  <a href="https://sidequestvr.com/app/2054/visitations" class="btn btn-primary flex-grow-1">Sidequest</a>
+                  <a href="https://www.oculus.com/experiences/go/4023694967657163/" class="btn btn-primary flex-grow-1">Oculus Go</a>
+                  <a href="https://store.steampowered.com/app/1485260/Visitations/" class="btn btn-primary flex-grow-1">Steam</a>
+                </div>
+              </div>
+              
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/videoseries?list=PLBonCgfCdkHTNWlQTvAlgdlAMd7ki424y" title="Visitations Playlist" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- East Forest -->
+        <div class="col-lg-6 col-md-6 mb-4">
+          <div class="experience-card h-100">
+            <h3 class="card-title">East Forest</h3>
+            <img src="https://freight.cargo.site/w/900/q/75/i/b4b90fda6aa95034405547d107e6d53593c88f2c47dfa657059d124d1ec09a53/Screenshot-2025-02-25-133839.png" class="card-img-top" alt="East Forest Collaboration">
+            <div class="card-body">
+              <p class="card-text">A longtime collaboration with musician East Forest. He provided the music for Visitations VR app, and together they've created numerous music videos, performed live at Area 15 in Las Vegas, and released a 6-hour music video featuring AI-generated visuals.</p>
+              
+              <a href="https://eastforest.org" class="btn btn-outline mb-3 w-100">Visit Website</a>
+              
+              <div class="download-links mt-4">
+                <h5 class="text-center mb-3">Featured Projects</h5>
+                <div class="d-grid">
+                  <a href="https://www.youtube.com/watch?v=smHJ2HB5EjA" class="btn btn-primary mb-2">Lovingly</a>
+                  <a href="https://www.youtube.com/watch?v=tr8RUTfuUEA" class="btn btn-primary mb-2">So What (ft. Duncan Trussell)</a>
+                  <a href="https://www.youtube.com/watch?v=w5YJxmLrZWE" class="btn btn-primary mb-2">Please Pass the Bliss (ft. Ram Dass)</a>
+                </div>
+              </div>
+              
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/smHJ2HB5EjA" title="East Forest - Lovingly" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- NeVRMind -->
+        <div class="col-lg-6 col-md-6 mb-4">
+          <div class="experience-card h-100">
+            <h3 class="card-title">NeVRMind</h3>
+            <img src="./img/nevrmind.png" class="card-img-top" alt="NeVRMind VR Experience">
+            <div class="card-body">
+              <p class="card-text">A biofeedback driven VR meditation designed to help focus and relax patients who will be undergoing psychedelic assisted therapy. Developed for Psyber, a subsidiary company of ATAI Life Sciences. The experience runs on mobile VR headsets such as the Oculus Quest.</p>
+              
+              <p class="card-text">Off the shelf EEG devices such as the Muse are enhanced with propriety machine learning tools to better recognize and reward states of calm focus in patients.</p>
+              
+              <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/MnaxxpaWSZQ" title="NeVRMind Trailer" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Partners Section -->
+  <section class="partners-section">
+    <div class="container">
+      <h2 class="section-title">Partners, Clients, and Affiliates</h2>
+      
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="partner-logo">
+            <img src="https://static1.squarespace.com/static/5a60d350f43b55d3978bcfa0/t/5eb1ae978506ae2ebaa4baa8/1588702878801/weblogo-01.png?format=2500w" alt="Partner Logo">
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="partner-logo" style="background-color: #333;">
+            <img src="https://cdn.aarp.net/content/dam/aarp/graphics/aarp_logos/120x30-aarp-header-logo-white.imgcache.rev29fe59b2d349227fab300c102cdc4995.svg" alt="AARP Logo">
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="partner-logo">
+            <img src="./img/mrhs.png" alt="MRHS Logo">
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="partner-logo">
+            <img src="./img/atai.png" alt="ATAI Logo">
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="partner-logo">
+            <img src="./img/rocket.png" alt="Rocket Logo">
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="partner-logo">
+            <img src="./img/johnshopkins.png" alt="Johns Hopkins Logo">
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="partner-logo">
+            <img src="img/novobeing.jpg" alt="Partner Logo">
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 col-6">
+          <div class="partner-logo">
+            <img src="img/EastForest.jpg" alt="East Forest Logo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h3 class="footer-logo">light.clinic</h3>
+          <p>Creating immersive digital experiences for healthcare and wellness</p>
+          
+          <div class="footer-social">
+            <a href="https://www.facebook.com/lightclinicvr" class="footer-link">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://twitter.com/the_lightclinic" class="footer-link">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/the_lightclinic/" class="footer-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/channel/UCbg5nbEayyUl2gHWrB2xbTg" class="footer-link">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://the-lightclinic.medium.com/we-are-light-clinic-1f4b400af0ed" class="footer-link">
+              <i class="fab fa-medium-m"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h5>Contact Us</h5>
+          <p>
+            <a href="mailto:info@light.clinic" class="footer-link">
+              <i class="far fa-envelope me-2"></i> info@light.clinic
+            </a>
+          </p>
+        </div>
+        
+        <div class="col-lg-4">
+          <h5>About Us</h5>
+          <p>Light Clinic is a creative digital studio specializing in immersive experiences for healthcare and wellness. We combine art, technology, and science to create transformative digital tools.</p>
+          <a href="https://the-lightclinic.medium.com/we-are-light-clinic-1f4b400af0ed" class="footer-link">Read our manifesto</a>
+        </div>
+      </div>
+      
+      <div class="row mt-4">
+        <div class="col-12 text-center">
+          <p class="mb-0">&copy; 2025 Light Clinic. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Smooth Scroll -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
-
 </html>
