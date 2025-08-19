@@ -1,0 +1,20 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $phone = $_POST["phone"];
+    $message = $_POST["message"];
+
+    // Add your email address here
+    $to = "zaysunal@gmail.com";
+    $subject = "New Form Submission";
+
+    $message_body = "Name: $name\nEmail: $email\nPhone: $phone\nMessage: $message";
+
+    // Use appropriate headers
+    $headers = "From: $email";
+
+    // Send the email
+    mail($to, $subject, $message_body, $headers);
+}
+?>
